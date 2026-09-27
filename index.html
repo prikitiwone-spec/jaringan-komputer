@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaringan Komputer | Aisyah Safitri</title>
+<style>
+*{box-sizing:border-box;scroll-behavior:smooth;margin:0;padding:0}
+:root{--pink:#ff6fae;--pink2:#ffe4f0;--purple:#9b6cff;--dark:#6844c5;--text:#40394a;--white:#fff;--shadow:0 12px 35px rgba(157,91,150,.13)}
+body{font-family:"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 10% 10%,#ffe5f1 0,transparent 25%),radial-gradient(circle at 90% 20%,#eee5ff 0,transparent 25%),#fffafd;color:var(--text);line-height:1.7}
+nav{position:sticky;top:0;z-index:10;background:#ffffffe8;backdrop-filter:blur(15px);border-bottom:1px solid #ff6fae26}
+.nav{max-width:1150px;margin:auto;padding:14px 25px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:22px;font-weight:800;color:var(--dark)}.logo span{color:var(--pink)}
+.nav ul{display:flex;gap:20px;list-style:none}.nav a{text-decoration:none;color:var(--text);font-size:14px;font-weight:600}.nav a:hover{color:var(--pink)}
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px;position:relative;overflow:hidden}.hero-content{max-width:900px;z-index:2}.badge{display:inline-block;padding:8px 18px;border-radius:50px;background:var(--pink2);color:#d94b88;font-size:13px;font-weight:700;margin-bottom:20px}.hero h1{font-size:clamp(42px,7vw,78px);line-height:1.05;margin-bottom:20px}.hero h1 span{background:linear-gradient(90deg,var(--pink),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero p{max-width:720px;margin:auto;font-size:17px;color:#776d7e}.buttons{margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.btn{display:inline-block;text-decoration:none;padding:12px 22px;border-radius:50px;font-weight:700;border:0;cursor:pointer}.primary{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;box-shadow:0 8px 20px #ff6fae40}.soft{background:#fff;color:var(--dark);border:1px solid #eadcf7}
+.bubble{position:absolute;border-radius:50%;opacity:.5;animation:float 5s ease-in-out infinite}.one{width:100px;height:100px;background:#ffc8df;left:7%;top:20%}.two{width:140px;height:140px;background:#ddd0ff;right:5%;bottom:15%;animation-delay:1s}.three{width:45px;height:45px;background:#ffb8d7;right:20%;top:15%;animation-delay:2s}@keyframes float{50%{transform:translateY(-20px)}}
+section{padding:90px 20px}.container{max-width:1100px;margin:auto}.title{text-align:center;margin-bottom:45px}.small{color:var(--pink);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:2px}.title h2{font-size:38px;margin-top:7px}.title p{max-width:650px;margin:10px auto;color:#817786}
+.profile{background:#fff;border-radius:30px;padding:35px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:25px}.profile-item{padding:15px 20px;background:#fff7fb;border-radius:18px;border:1px solid #f7dfea}.profile-item strong{display:block;color:var(--dark);font-size:13px}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;padding:28px 20px;border-radius:25px;box-shadow:var(--shadow);transition:.3s}.card:hover{transform:translateY(-8px)}.tool{text-align:center}.icon{width:70px;height:70px;margin:auto auto 15px;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:35px;background:linear-gradient(135deg,#ffe2ef,#eee6ff)}.card h3{margin-bottom:8px}.card p{font-size:13px;color:#817786}
+.step{display:grid;grid-template-columns:90px 1fr;gap:25px;margin-bottom:25px;background:#fff;padding:28px;border-radius:25px;box-shadow:var(--shadow)}.num{width:65px;height:65px;border-radius:20px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;font-size:22px;font-weight:800}.step h3{color:var(--dark);margin-bottom:8px}.step p{color:#716976}.tip{margin-top:15px;background:#fff2f8;border-left:4px solid var(--pink);padding:12px 15px;border-radius:10px;font-size:13px}
+.wire{background:#fff;padding:30px;border-radius:25px;box-shadow:var(--shadow);margin-top:30px;overflow:auto}.wire table{width:100%;border-collapse:collapse;min-width:500px}.wire th,.wire td{padding:13px;text-align:center;border-bottom:1px solid #f0e6ed}.wire th{background:#fff1f7;color:var(--dark)}
+.connection{background:linear-gradient(135deg,#fff1f7,#f1edff);border-radius:30px;padding:40px;text-align:center}.laptops{display:flex;align-items:center;justify-content:center;gap:35px;margin:35px 0;flex-wrap:wrap}.laptop{background:#fff;padding:25px;border-radius:20px;box-shadow:var(--shadow);min-width:170px}.laptop-icon{font-size:55px}.line{height:6px;width:130px;background:linear-gradient(90deg,var(--pink),var(--purple));border-radius:10px;position:relative}.line:after{content:"RJ45";position:absolute;top:-28px;left:50%;transform:translateX(-50%);font-size:12px;font-weight:bold;color:var(--dark)}
+.sharing{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.checklist{background:#fff;border-radius:30px;padding:35px;box-shadow:var(--shadow);margin-top:30px}.check{display:flex;gap:15px;padding:14px 0;border-bottom:1px solid #f0e7ee}.check:last-child{border:0}.circle{width:30px;height:30px;min-width:30px;border-radius:50%;background:#ffe1ef;display:flex;align-items:center;justify-content:center;color:var(--pink);font-weight:bold}
+.media{background:linear-gradient(135deg,#ffeef6b3,#eee8ffb3)}.uploads{display:grid;grid-template-columns:1fr 1fr;gap:25px}.upload{background:#fff;padding:30px;border-radius:28px;box-shadow:var(--shadow)}input[type=file]{width:100%;padding:15px;border:2px dashed #e4cce0;border-radius:15px;background:#fffafd;cursor:pointer}.filename{margin-top:12px;font-size:13px;color:#817786}.preview{margin-top:20px;min-height:180px;border-radius:18px;background:#faf6fb;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;text-align:center;color:#93889a}.preview iframe{width:100%;height:450px;border:0}.preview video{width:100%;max-height:350px;border-radius:15px}.download{display:inline-block;margin-top:15px;text-decoration:none;padding:10px 18px;background:var(--purple);color:#fff;border-radius:30px;font-weight:700;font-size:13px}
+footer{background:#3f3048;color:#fff;text-align:center;padding:45px 20px}footer h3{color:#ffafd0;margin-bottom:8px}footer p{color:#d8cbdc;font-size:13px}.heart{color:#ff79b4}
+@media(max-width:850px){.nav ul{display:none}.tools{grid-template-columns:repeat(2,1fr)}.sharing,.uploads{grid-template-columns:1fr}.profile{grid-template-columns:1fr}}
+@media(max-width:550px){section{padding:65px 15px}.hero h1{font-size:43px}.tools{grid-template-columns:1fr}.step{grid-template-columns:1fr;text-align:center}.num{margin:auto}.connection{padding:25px 15px}.line{width:80px}}
+</style>
+</head>
+<body>
+<nav><div class="nav"><div class="logo">LAN<span>♡</span>Share</div><ul><li><a href="#tentang">Tentang</a></li><li><a href="#alat">Alat</a></li><li><a href="#rakit">Merakit</a></li><li><a href="#laptop">Laptop</a></li><li><a href="#sharing">Sharing</a></li><li><a href="#media">PPT & Video</a></li></ul></div></nav>
+
+<header class="hero">
+<div class="bubble one"></div><div class="bubble two"></div><div class="bubble three"></div>
+<div class="hero-content">
+<div class="badge">♡ JARINGAN KOMPUTER</div>
+<h1>Sharing File<br>Menggunakan <span>Kabel LAN</span></h1>
+<p>Panduan lengkap mulai dari merakit kabel LAN menggunakan RJ45 hingga menghubungkan dua laptop dan melakukan sharing file melalui jaringan LAN.</p>
+<div class="buttons"><a href="#rakit" class="btn primary">Mulai Belajar ✨</a><a href="#media" class="btn soft">Lihat PPT & Video</a></div>
+</div></header>
+
+<section id="tentang"><div class="container"><div class="title"><div class="small">Student Profile</div><h2>Tentang Pembuat</h2><p>Informasi mahasiswa dan mata kuliah pada proyek ini.</p></div>
+<div class="profile">
+<div class="profile-item"><strong>Nama</strong>Aisyah Safitri</div><div class="profile-item"><strong>Kelas</strong>1-TIA</div>
+<div class="profile-item"><strong>NIM</strong>062640723192</div><div class="profile-item"><strong>Jurusan</strong>Teknik Komputer</div>
+<div class="profile-item"><strong>Program Studi</strong>D4 Teknologi Informatika Multimedia Digital</div><div class="profile-item"><strong>Mata Kuliah</strong>Jaringan Komputer</div>
+<div class="profile-item"><strong>Dosen Pengampu</strong>Dr. Ali Firdaus. S.Kom., M.Kom.</div><div class="profile-item"><strong>Topik</strong>Sharing File Menggunakan Kabel LAN</div>
+</div></div></section>
+
+<section id="alat"><div class="container"><div class="title"><div class="small">Preparation</div><h2>Alat & Bahan</h2><p>Alat utama yang dibutuhkan untuk membuat kabel LAN dan menghubungkan dua laptop.</p></div>
+<div class="tools">
+<div class="card tool"><div class="icon">🔌</div><h3>RJ45</h3><p>Konektor yang dipasang pada ujung kabel UTP untuk menghubungkannya ke port Ethernet.</p></div>
+<div class="card tool"><div class="icon">🧰</div><h3>Tang Crimping</h3><p>Digunakan untuk memasang dan mengunci kabel UTP ke konektor RJ45.</p></div>
+<div class="card tool"><div class="icon">🧪</div><h3>LAN Tester</h3><p>Digunakan untuk mengecek apakah susunan kabel dan koneksi RJ45 sudah benar.</p></div>
+<div class="card tool"><div class="icon">🧵</div><h3>Kabel UTP</h3><p>Media penghantar jaringan yang digunakan untuk membuat kabel Ethernet.</p></div>
+</div></div></section>
+
+<section id="rakit"><div class="container"><div class="title"><div class="small">Step 01</div><h2>Merakit Kabel LAN Cross Over</h2><p>Ikuti langkah berikut untuk membuat kabel LAN crossover menggunakan konektor RJ45.</p></div>
+<div class="step"><div class="num">01</div><div><h3>Potong Kabel UTP</h3><p>Tentukan panjang kabel yang dibutuhkan kemudian potong kabel UTP menggunakan pemotong pada tang crimping.</p></div></div>
+<div class="step"><div class="num">02</div><div><h3>Kupas Bagian Luar Kabel</h3><p>Kupas lapisan luar kabel UTP secukupnya agar pasangan kabel di dalamnya dapat disusun.</p></div></div>
+<div class="step"><div class="num">03</div><div><h3>Susun Warna Kabel</h3><p>Untuk kabel crossover, kedua ujung menggunakan standar berbeda, yaitu T568A pada satu sisi dan T568B pada sisi lainnya.</p></div></div>
+<div class="step"><div class="num">04</div><div><h3>Masukkan Kabel ke RJ45</h3><p>Ratakan ujung kabel kemudian masukkan seluruh inti kabel ke dalam konektor RJ45 hingga mencapai bagian depan konektor.</p></div></div>
+<div class="step"><div class="num">05</div><div><h3>Crimping</h3><p>Masukkan RJ45 ke tang crimping lalu tekan dengan kuat agar pin RJ45 menekan setiap kabel.</p></div></div>
+<div class="step"><div class="num">06</div><div><h3>Uji dengan LAN Tester</h3><p>Hubungkan kedua ujung kabel ke LAN Tester. Pastikan indikator menyala sesuai urutan koneksi kabel.</p><div class="tip">💡 Jika indikator tidak berurutan atau ada lampu yang tidak menyala, periksa kembali susunan kabel dan proses crimping.</div></div></div>
+<div class="wire"><h3 style="margin-bottom:20px;color:#6844c5">🎨 Urutan Warna Kabel</h3><table><tr><th>Pin</th><th>T568A</th><th>T568B</th></tr>
+<tr><td>1</td><td>Putih-Hijau</td><td>Putih-Jingga</td></tr><tr><td>2</td><td>Hijau</td><td>Jingga</td></tr><tr><td>3</td><td>Putih-Jingga</td><td>Putih-Hijau</td></tr><tr><td>4</td><td>Biru</td><td>Biru</td></tr><tr><td>5</td><td>Putih-Biru</td><td>Putih-Biru</td></tr><tr><td>6</td><td>Jingga</td><td>Hijau</td></tr><tr><td>7</td><td>Putih-Cokelat</td><td>Putih-Cokelat</td></tr><tr><td>8</td><td>Cokelat</td><td>Cokelat</td></tr></table>
+<div class="tip">🌸 Kabel crossover menggunakan T568A di satu ujung dan T568B di ujung lainnya.</div></div></div></section>
+
+<section id="laptop"><div class="container"><div class="title"><div class="small">Step 02</div><h2>Menghubungkan 2 Laptop</h2><p>Setelah kabel LAN selesai dibuat dan diuji, gunakan kabel tersebut untuk menghubungkan dua laptop secara langsung.</p></div>
+<div class="connection"><div class="laptops"><div class="laptop"><div class="laptop-icon">💻</div><strong>Laptop 1</strong><p>IP: 192.168.1.1</p></div><div class="line"></div><div class="laptop"><div class="laptop-icon">💻</div><strong>Laptop 2</strong><p>IP: 192.168.1.2</p></div></div>
+<div class="step" style="text-align:left;box-shadow:none"><div class="num">01</div><div><h3>Hubungkan Kabel</h3><p>Colokkan ujung kabel LAN ke port Ethernet Laptop 1 dan ujung lainnya ke Laptop 2.</p></div></div>
+<div class="step" style="text-align:left;box-shadow:none"><div class="num">02</div><div><h3>Atur IP Address</h3><p>Atur IP kedua laptop dalam satu jaringan. Contoh: Laptop 1 192.168.1.1 dan Laptop 2 192.168.1.2 dengan subnet mask 255.255.255.0.</p></div></div>
+<div class="step" style="text-align:left;box-shadow:none"><div class="num">03</div><div><h3>Uji Koneksi</h3><p>Gunakan perintah <b>ping</b> melalui Command Prompt untuk memastikan kedua laptop dapat saling berkomunikasi.</p><div class="tip"><b>Contoh:</b> ping 192.168.1.2</div></div></div></div></div></section>
+
+<section id="sharing"><div class="container"><div class="title"><div class="small">Step 03</div><h2>Sharing File melalui LAN</h2><p>Setelah kedua laptop terhubung dan dapat berkomunikasi, file dapat dibagikan melalui jaringan lokal.</p></div>
+<div class="sharing">
+<div class="card"><div style="font-size:35px">📁</div><h3>1. Pilih Folder</h3><p>Buat atau pilih folder yang berisi file yang ingin dibagikan kepada laptop lain.</p></div>
+<div class="card"><div style="font-size:35px">🔗</div><h3>2. Aktifkan Sharing</h3><p>Klik kanan folder → Properties → Sharing → Advanced Sharing, kemudian aktifkan sharing pada folder tersebut.</p></div>
+<div class="card"><div style="font-size:35px">💻</div><h3>3. Akses dari Laptop 2</h3><p>Pada Laptop 2 buka File Explorer dan masukkan alamat jaringan seperti: <b>\\192.168.1.1</b></p></div>
+</div>
+<div class="checklist"><h3 style="color:#6844c5;margin-bottom:15px">✨ Checklist Sebelum Sharing</h3>
+<div class="check"><div class="circle">✓</div>Kabel LAN sudah diuji menggunakan LAN Tester.</div><div class="check"><div class="circle">✓</div>Kedua laptop berada dalam satu jaringan.</div><div class="check"><div class="circle">✓</div>IP Address kedua laptop sudah diatur.</div><div class="check"><div class="circle">✓</div>Koneksi sudah diuji menggunakan perintah ping.</div><div class="check"><div class="circle">✓</div>Folder sudah diatur untuk dapat diakses bersama.</div>
+</div></div></section>
+
+<section id="media" class="media"><div class="container"><div class="title"><div class="small">Project Files</div><h2>PPT & Video Dokumentasi</h2><p>Upload file presentasi dan dua video dokumentasi praktikum di bawah ini.</p></div>
+<div class="uploads">
+<div class="upload"><h3>📊 Upload PPT</h3><p style="font-size:13px;color:#817786;margin-bottom:15px">Upload file PowerPoint. Tombol download akan tersedia setelah file dipilih.</p><input type="file" id="ppt" accept=".ppt,.pptx"><div id="pptName" class="filename">Belum ada file PPT.</div><div id="pptPreview" class="preview">📑<br>Preview file PPT akan muncul di sini.</div><a id="pptDownload" class="download" style="display:none" download>⬇ Download PPT</a></div>
+<div class="upload"><h3>🎬 Video 1</h3><p style="font-size:13px;color:#817786;margin-bottom:15px">Upload video proses merakit kabel LAN.</p><input type="file" id="video1" accept="video/*"><div id="name1" class="filename">Belum ada video.</div><div id="preview1" class="preview">🎥<br>Video 1 akan muncul di sini.</div></div>
+<div class="upload"><h3>🎬 Video 2</h3><p style="font-size:13px;color:#817786;margin-bottom:15px">Upload video proses sharing file antar laptop.</p><input type="file" id="video2" accept="video/*"><div id="name2" class="filename">Belum ada video.</div><div id="preview2" class="preview">🎥<br>Video 2 akan muncul di sini.</div></div>
+</div></div></section>
+
+<footer><h3>LAN♡Share</h3><p>Jaringan Komputer — Sharing File Menggunakan Kabel LAN</p><p>Aisyah Safitri · 1-TIA</p><p style="margin-top:20px">Made with <span class="heart">♥</span> for learning</p></footer>
+
+<script>
+const ppt=document.getElementById("ppt"),pptPreview=document.getElementById("pptPreview"),pptName=document.getElementById("pptName"),pptDownload=document.getElementById("pptDownload");
+ppt.addEventListener("change",function(){const f=this.files[0];if(!f)return;pptName.innerHTML="📄 File: <b>"+f.name+"</b>";pptPreview.innerHTML='<div><div style="font-size:50px">📊</div><strong>'+f.name+'</strong><p style="font-size:12px">File PowerPoint siap digunakan.</p></div>';const u=URL.createObjectURL(f);pptDownload.href=u;pptDownload.download=f.name;pptDownload.style.display="inline-block"});
+function videoUpload(input,preview,name){document.getElementById(input).addEventListener("change",function(){const f=this.files[0];if(!f)return;const u=URL.createObjectURL(f);document.getElementById(name).innerHTML="🎬 Video: <b>"+f.name+"</b>";document.getElementById(preview).innerHTML='<video controls><source src="'+u+'" type="'+f.type+'">Browser tidak mendukung video.</video>'})}
+videoUpload("video1","preview1","name1");videoUpload("video2","preview2","name2");
+const cards=document.querySelectorAll(".card,.step,.upload");const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform="translateY(0)"}}),{threshold:.1});cards.forEach(c=>{c.style.opacity=0;c.style.transform="translateY(25px)";c.style.transition="all .7s ease";observer.observe(c)});
+</script>
+</body>
+</html>
